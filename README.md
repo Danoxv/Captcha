@@ -1,9 +1,6 @@
 # Captcha
 
-Single Entry Point (Front controller realization)
-PHP app carcase with all requests redirection to one single index.php.
-
-Implemented with Apache and PHP. Will free to send PR's for support other servers (nginx, IIS).
+##Captcha for checking a user for a bot
 
 Requirements
 PHP version >= 7.4+
