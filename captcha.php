@@ -11,30 +11,30 @@ if (!$getcharsofcapcha) {
     $randcolor1 = imagecolorallocate($im, mt_rand(1, 255), mt_rand(1, 255), mt_rand(1, 255)); //backgroung color
     $orange = imagecolorallocate($im, 255, 200, 0);
     imagefilledrectangle($im, 0, 0, 1920, 1080, $randcolor);
-    imagesetthickness($im, mt_rand(0.5,2));
+    imagesetthickness($im, mt_rand(0.5, 2));
     imageellipse($im, mt_rand(85, 348), mt_rand(80, 110), mt_rand(200, 320), mt_rand(50, 160), $randcolor1);
     imageellipse($im, mt_rand(85, 348), mt_rand(80, 110), mt_rand(200, 320), mt_rand(50, 160), $randcolor1);
 
-    imageline($im, mt_rand(-20,160), mt_rand(-55,270), mt_rand(-20,340), mt_rand(-55,270),$black );
-    imageline($im, mt_rand(-20,340), mt_rand(-55,270), mt_rand(-20,340), mt_rand(-55,270), imagecolorallocate($im, mt_rand(1, 255), mt_rand(1, 255), mt_rand(1, 255)));
-    imageline($im, mt_rand(-20,340), mt_rand(-55,270), mt_rand(-20,340), mt_rand(-55,270), imagecolorallocate($im, mt_rand(1, 255), mt_rand(1, 255), mt_rand(1, 255)));
-    imageline($im, mt_rand(-20,340), mt_rand(-55,270), mt_rand(-20,340), mt_rand(-55,270), imagecolorallocate($im, mt_rand(1, 255), mt_rand(1, 255), mt_rand(1, 255)));
-    imageline($im, mt_rand(-20,340), mt_rand(-55,270), mt_rand(-20,340), mt_rand(-55,270), $black);
-    imageline($im, mt_rand(-20,340), mt_rand(-55,270), mt_rand(-20,340), mt_rand(-55,270), $black);
-    imageline($im, mt_rand(-20,340), mt_rand(-55,270), mt_rand(-20,340), mt_rand(-55,270), $black);
-    imageline($im, mt_rand(-20,340), mt_rand(-55,270), mt_rand(-20,340), mt_rand(-55,270), $black);
+    imageline($im, mt_rand(-20, 160), mt_rand(-55, 270), mt_rand(-20, 340), mt_rand(-55, 270), $black);
+    imageline($im, mt_rand(-20, 340), mt_rand(-55, 270), mt_rand(-20, 340), mt_rand(-55, 270), imagecolorallocate($im, mt_rand(1, 255), mt_rand(1, 255), mt_rand(1, 255)));
+    imageline($im, mt_rand(-20, 340), mt_rand(-55, 270), mt_rand(-20, 340), mt_rand(-55, 270), imagecolorallocate($im, mt_rand(1, 255), mt_rand(1, 255), mt_rand(1, 255)));
+    imageline($im, mt_rand(-20, 340), mt_rand(-55, 270), mt_rand(-20, 340), mt_rand(-55, 270), imagecolorallocate($im, mt_rand(1, 255), mt_rand(1, 255), mt_rand(1, 255)));
+    imageline($im, mt_rand(-20, 340), mt_rand(-55, 270), mt_rand(-20, 340), mt_rand(-55, 270), $black);
+    imageline($im, mt_rand(-20, 340), mt_rand(-55, 270), mt_rand(-20, 340), mt_rand(-55, 270), $black);
+    imageline($im, mt_rand(-20, 340), mt_rand(-55, 270), mt_rand(-20, 340), mt_rand(-55, 270), $black);
+    imageline($im, mt_rand(-20, 340), mt_rand(-55, 270), mt_rand(-20, 340), mt_rand(-55, 270), $black);
 
     $font = 'C:\OpenServer\domains\captcha\fonts\BigShouldersStencilDisplay-Light.ttf';
 
-   static $letters = array(
+    static $letters = array(
         '1',
         '2',
         '3',
         '6',
         '7',
         '8',
-        '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', '', 'x', 'y', 'z',
-        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', '', 'X', 'Y', 'Z'
+        '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n' , 'p', 'q', 'r', 's', 't', 'u', 'v',  'x', 'y', 'z',
+        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'X', 'Y', 'Z'
     );
 
     shuffle($letters);
@@ -97,11 +97,13 @@ if (!$getcharsofcapcha) {
             text-align: center;
             font-size: 25pt;
         }
-mark{
-    text-align: center;
-    font-size: 15pt;
-    margin: 10px 445px;
-}
+
+        mark {
+            text-align: center;
+            font-size: 14pt;
+            margin: 10px 429px;
+        }
+
         button {
             /*color: black;*/
             /*display: flex;*/
@@ -110,7 +112,7 @@ mark{
             background-color: #4682B4;
             color: white;
             padding: 8px 10px;
-            margin: 10px 85px;
+            margin: 5px 85px;
             border: none;
             cursor: pointer;
             width: 100px;
@@ -132,7 +134,11 @@ mark{
 
 </form>
 <p><?= $checkResult ?></p>
-<mark>Если плохо видно то нажмите еще раз "Проверить"</mark>
+
+    <div class="alert alert-warning" role="alert">
+        <mark> Если плохо видно то нажмите еще раз "Проверить"</mark>
+    </div>
+
 
 </body>
 </html>
