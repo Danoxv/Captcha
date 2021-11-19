@@ -1,11 +1,18 @@
-# Captcha
+# Капча
+Капча для распознавания пользователя на бота 
 
-##Captcha for checking a user for a bot
+Доступные функции:
+* Смена картинки более лучшей видимости.
 
-Requirements
-PHP version >= 7.4+
-Apache 2.4
-How it works
-The user enters what is shown in the picture with minor interferences (lines, ellipses, dashed lines).
-If what is shown in the picture is poorly visible, 
-then it follows the manual further and a new captcha of better quality is generated 
+## Требования
+* PHP >= 7.4
+* Apache 2.4
+
+## Установка
+ ### Скачайте репозиторий и выполните:
+
+ * Выберите путь к шрифту.
+   
+ * Укажите в форме на какой файл ее направить   
+
+

@@ -128,7 +128,7 @@ if (!$getcharsofcapcha) {
         <img src="data:image/png;base64,<?= base64_encode($ImageData) ?>"/>
     <?php endif; ?>
 </figure>
-<form method='post' action="captcha.php">
+<form method='post' action="#">
     <input type="text" name="Letter" id="Letter" class="form-control" aria-describedby="emailHelp">
     <button type="submit" class="signupbtn">Проверить</button>
 
